@@ -1,2 +1,8 @@
-# Express_LikeMe
-RedSocial | Express.js PostgreSQL React.js Bootstrap
+# LikeMe 📷
+
+* CRUD de red social LikeMe
+* React.js
+* Javascript
+* Express.Js / Node.Js
+* PostgreSQL
+* Bootstrap y CSS personalizado
