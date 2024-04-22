@@ -2,8 +2,8 @@ CREATE DATABASE likeme;
 
 CREATE TABLE posts (
   id SERIAL, 
-  titulo VARCHAR(25), 
-  img VARCHAR(1000), 
-  descripcion VARCHAR(255), 
+  title VARCHAR(25), 
+  imgURL VARCHAR(1000), 
+  about VARCHAR(255), 
   likes INT
   );

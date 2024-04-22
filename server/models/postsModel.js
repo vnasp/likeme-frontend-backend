@@ -1,7 +1,7 @@
 import pool from "../db/connectionDB.js"
 
 const getPosts = async () => {
-  const SQLquery = { text: "SELECT * FROM posts ORDER BY likes DESC;" }
+  const SQLquery = { text: "SELECT * FROM posts ORDER BY id DESC;" }
   try {
     const response = await pool.query(SQLquery)
     return response.rows
@@ -10,10 +10,10 @@ const getPosts = async () => {
   }
 }
 
-const addPost = async (titulo, imgSrc, descripcion, likes=0) => {
+const addPost = async (title, image, about, likes=0) => {
   const SQLquery = {
-    text: "INSERT INTO posts (titulo, img, descripcion,likes) VALUES ($1, $2, $3,$4) RETURNING *;",
-    values: [titulo, imgSrc, descripcion,likes]
+    text: "INSERT INTO posts (title, imgURL, about, likes) VALUES ($1, $2, $3,$4) RETURNING *;",
+    values: [title, image, about, likes]
   }
   try {
     const response = await pool.query(SQLquery)
