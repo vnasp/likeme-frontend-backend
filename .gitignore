@@ -1,4 +1,9 @@
 
 /client/node_modules
 /server/node_modules
-server/logs/2024-04-17.log
+/server/logs
+client/.DS_Store
+client/public/.DS_Store
+.env
+.DS_Store
+/.vscode
