@@ -8,7 +8,7 @@ const urlBaseServer = "http://localhost:3000";
 
 export default function Main() {
   const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+  const [imgSrc, setImgSRC] = useState("");
   const [about, setAbout] = useState("");
   const [posts, setPosts] = useState([]);
   const [message, setMessage] = useState("");
@@ -19,8 +19,8 @@ export default function Main() {
   };
 
   const addPost = async () => {
-    if (title && image && about) {
-      const post = { title, image, about };
+    if (title && imgSrc && about) {
+      const post = { title, url: imgSrc, about };
       await axios.post(urlBaseServer + `/posts`, post);
       setMessage("Post agregado correctamente");
       getPosts();
@@ -53,7 +53,7 @@ export default function Main() {
             </Typography>
             <Form
               setTitle={setTitle}
-              setImage={setImage}
+              setImgSRC={setImgSRC}
               setAbout={setAbout}
               addPost={addPost}
               setMessage={message}
@@ -76,7 +76,7 @@ export default function Main() {
             {posts.map((post, index) => (
               <Grid item key={index} xs={12} md={3}
               sx={
-                {p: 1}
+                {px: 1}
               }>
                 <Card
                   sx={{

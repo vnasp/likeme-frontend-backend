@@ -1,4 +1,6 @@
-function Form({ setTitulo, setImgSRC, setDescripcion, setMessage, agregarPost }) {
+import { Button } from "@mui/material";
+
+function Form({ setTitle, setImgSRC, setAbout, setMessage, addPost }) {
   return (
     <>
     <div className="form rounded">
@@ -6,13 +8,14 @@ function Form({ setTitulo, setImgSRC, setDescripcion, setMessage, agregarPost })
         <h6>Agrega una Fotografía</h6>
         <label>Título</label>
         <input
-          onChange={(event) => setTitulo(event.target.value)}
+          onChange={(event) => setTitle(event.target.value)}
           className="form-control"
+          required
         />
       </div>
       <div className="mb-2">
         <label>URL de la Fotografía</label>
-        <input
+        <input type="url" pattern="https?://.+" title="Include http:// or https://" required
           onChange={(event) => setImgSRC(event.target.value)}
           className="form-control"
         />
@@ -20,14 +23,15 @@ function Form({ setTitulo, setImgSRC, setDescripcion, setMessage, agregarPost })
       <div className="mb-3">
         <label>Descripción</label> <br />
         <textarea
-          onChange={(event) => setDescripcion(event.target.value)}
+          onChange={(event) => setAbout(event.target.value)}
           className="form-control"
+          required
         ></textarea>
       </div>
       <div className="d-flex mb-3">
-        <button onClick={agregarPost} className="btn border-0 m-auto">
+      <Button variant="contained" onClick={addPost}>
           Agregar
-        </button>
+        </Button>
       </div>
       <div>{setMessage}</div>
     </div>

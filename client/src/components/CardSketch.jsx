@@ -11,7 +11,7 @@ import CloseIcon from "@mui/icons-material/Close";
 export default function CardSketch({ post, like, remove }) {
   return (
     <>
-      <CardMedia component="img" image={post.image} alt={post.title} />
+      <CardMedia component="img" image={post.img_url} alt={post.title} />
       <CardContent>
         <Typography variant="h5" gutterBottom>
           {post.title}
